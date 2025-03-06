@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+    <script>
+      // won't work, Because the script comes before the head and can't read it
+      document.getElementById("el").style.color = "red";
+    </script>
+    <script>
+      // works, because it's onload
+      window.onload = function () {
+        document.getElementById("el").style.color = "red";
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="el">Page Title</h1>
+    <script>
+      // works, because the script comes after the head
+      document.getElementById("el").style.color = "red";
+    </script>
+  </body>
+</html>
